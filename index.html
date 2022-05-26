@@ -5,13 +5,21 @@
     <title>Mercuryo tests</title>
 </head>
 <body>
-    <div id="mercuryo-widget"></div>
+    <div style="display: flex; gap: 16px;">
+        <div style="display: flex; width: 50%;" id="mercuryo-widget-buy"></div>
+        <div style="display: flex; width: 50%;" id="mercuryo-widget-sell"></div>
+    </div>
 
     <script src="https://sandbox-widget.mrcr.io/embed.2.0.js"></script>
     <script>
         mercuryoWidget.run({
           widgetId: '85a55152-b200-4ead-974b-378a7fd6dd4e',
-          host: document.getElementById('mercuryo-widget'),
+          host: document.getElementById('mercuryo-widget-buy'),
+          type: 'buy',
+        });
+        mercuryoWidget.run({
+          widgetId: '85a55152-b200-4ead-974b-378a7fd6dd4e',
+          host: document.getElementById('mercuryo-widget-sell'),
           type: 'sell',
         });
     </script>
